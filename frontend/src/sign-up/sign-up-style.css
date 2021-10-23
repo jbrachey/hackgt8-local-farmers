@@ -1,0 +1,33 @@
+.submitButton {
+    border: none;
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 8px;
+}
+
+.invalidSubmit {
+    background-color: red;
+}
+
+.validSubmit {
+    background-color: green;
+}
+
+.lines {
+    padding-top: 2vh;
+}
+
+.buttonLine {
+    padding-top: 10vh;
+}
+
+.inputBox {
+    margin-left: 1vw;
+}
