@@ -7,9 +7,11 @@ const socketio = require('socket.io')
 
 const app = express()
 
+const cookieProps = require('./utils/cookie')
+
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
-app.use(cookieParser('COOKIE_SECRET'));
+app.use(cookieParser(cookieProps.secret));
 app.use(helmet())
 
 app.use('/api', require('./api'));

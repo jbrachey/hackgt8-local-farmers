@@ -30,7 +30,7 @@ authRouter.post('/login', async (req, res) => {
     return res.status(200).end()
 })
 
-authRouter.get('/logout', (req, res) => {
+authRouter.post('/logout', (req, res) => {
     res.clearCookie(cookieProps.key, cookieProps.options)
     return res.status(200).end()
 })
