@@ -10,7 +10,7 @@ export const registerUser = (name, email, password) => {
         password: password
     };
 
-    axios.post(`http://localhost:8000/api/users/create`, { user })
+    axios.post(`http://localhost:8000/api/users/create`, user)
         .then(res => {
             console.log(res);
             console.log(res.data);
@@ -73,9 +73,9 @@ export const UserSignUp = () => {
             <div className='buttonLine'>
                 <button className={isValidUserSubmission(name, email, password) ? 
                     'submitButton validSubmit' : 'submitButton invalidSubmit'} onClick={() => {
-                    if (isValidUserSubmission(name, email, password)) {
+                    //if (isValidUserSubmission(name, email, password)) {
                         registerUser(name, email, password);
-                    }
+                    //}
                 }}>Submit</button>
             </div>
         </div>
