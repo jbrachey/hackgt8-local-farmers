@@ -1,23 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
+//import Farm from './farm-page/farm';
+//import FarmPage from './farm-page/components/main-farm-page';
 
 function App() {
+  //const farm = new Farm('Local Organic Farm', '1234567890', '123 Farm Lane', 'Atlanta', 'GA', '30269');
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
     </div>
   );
 }
