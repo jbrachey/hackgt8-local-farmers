@@ -33,6 +33,7 @@ User {
 
 Farms {
     id,
+    username,
     name,
     location (zipcode),
     user id (producer)

@@ -4,11 +4,13 @@ const http = require('http')
 const helmet = require('helmet')
 const cookieParser = require('cookie-parser')
 const socketio = require('socket.io')
+const cors = require('cors')
 
 const app = express()
 
 const cookieProps = require('./utils/cookie')
 
+app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use(cookieParser(cookieProps.secret));

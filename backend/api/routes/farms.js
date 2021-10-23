@@ -17,6 +17,7 @@ farmRouter.post('/create', (req, res) => {
             error: 'Missing Information'
         })
     }
+    // make username unique
     if (db.farms.find(f => f.name === farm.name && f.location === farm.location)) {
         return res.status(401).json({
             error: 'Farm with same name + location already exists'

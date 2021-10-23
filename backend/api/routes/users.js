@@ -37,7 +37,7 @@ userRouter.get('/get', (req, res) => {
 
 userRouter.get('/get/:email', (req, res) => {
     const email = req.params.email
-    return res.json(db.users.find(u => u.email == email)).end()
+    return res.json(db.users.find(u => u.email === email)).end()
 })
 
 userRouter.get('/get/:id', (req, res) => {
