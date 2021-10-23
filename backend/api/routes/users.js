@@ -15,31 +15,38 @@ User {
 */
 
 userRouter.post('/create', (req, res) => {
-    const user = req.body.user
+    const user = req.body
     if (!user) {
-        console.log("Failed to Create User")
+        return res.status(401).json({
+            error: 'Missing Information'
+        })
     }
     if (db.users.find(u => u.email === user.email)) {
-        console.log("User Already Exists")
+        return res.status(401).json({
+            error: 'User already exists'
+        })
     }
     user.id = db.next()
     db.users.push(user)
-    res.statusCode(200)
+    return res.status(200).end()
 })
 
 userRouter.get('/get', (req, res) => {
-    res.json(db.users)
+    return res.json(db.users).end()
 })
 
 userRouter.get('/get/:email', (req, res) => {
     const email = req.params.email
-    res.json(db.users.find(u => u.email == email))
+    return res.json(db.users.find(u => u.email === email)).end()
 })
 
 userRouter.get('/get/:id', (req, res) => {
     const id = req.params.id
-    res.json(db.users.find(u => u.id == id))
+    res.json(db.users.find(u => u.id == id)).end()
 })
+
+/*
+Blocked Endpoints
 
 userRouter.put('/update', (req, res) => {
     const user = req.body.user
@@ -52,14 +59,15 @@ userRouter.put('/update', (req, res) => {
     } else {
         console.log('User updating failed because user does not exist')
     }
-    res.statusCode(200)
+    return res.status(200).end()
 })
 
 userRouter.delete('/delete/:id', (req, res) => {
     const id = req.params.id
     db.users.delete(u => u.id === id)
-    res.statusCode(200)
+    return res.status(200).end()
 })
+*/
 
 
 module.exports = userRouter

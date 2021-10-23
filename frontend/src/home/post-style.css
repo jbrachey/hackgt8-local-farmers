@@ -1,5 +1,9 @@
 .post {
-    outline: 4px;
+    outline: 2px;
+    outline-style: solid;
+    box-shadow: 0 0 3px 3px;
+    background-color: tan;
+    width: 50vw;
 }
 
 .farmName {

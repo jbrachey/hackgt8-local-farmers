@@ -1,15 +1,21 @@
 const Database = {
     unique: 0,
+    
     users: [],
     farms: [],
     posts: [],
     chats: [],
 
-    active_users: [],
-
     next() {
         this.unique++
         return this.unique
+    },
+
+    print() {
+        console.log('USERS = ', this.users)
+        console.log('FARMS = ', this.farms)
+        console.log('POSTS = ', this.posts)
+        console.log('CHATS = ', this.chats)
     }
 }
 
@@ -27,6 +33,7 @@ User {
 
 Farms {
     id,
+    username,
     name,
     location (zipcode),
     user id (producer)

@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const middleware = require('./middleware')
+const middleware = require('../utils/middleware')
 
 router.use('/auth/', require('./routes/auth'))
 router.use('/users/', require('./routes/users'))
