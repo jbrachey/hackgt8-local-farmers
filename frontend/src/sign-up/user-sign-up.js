@@ -1,8 +1,26 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import './sign-up-style.css';
 
 export const registerUser = (name, email, password) => {
     // add user to backend db
+    const user = {
+        name: name, 
+        email: email,
+        password: password
+    };
+
+    axios.post(`http://localhost:8000/api/users/create`, { user })
+        .then(res => {
+            console.log(res);
+            console.log(res.data);
+            /*
+            axios.get(`http://localhost:8000/api/users/get`)
+                .then(asdf => {
+                    console.log(asdf);
+                })
+                */
+        })
 }
 
 export const isValidUserSubmission = (name, email, password) => {
