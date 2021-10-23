@@ -1,0 +1,11 @@
+.post {
+    outline: 4px;
+}
+
+.farmName {
+    font-size: medium;
+}
+
+.postText {
+    font-size: small;
+}
