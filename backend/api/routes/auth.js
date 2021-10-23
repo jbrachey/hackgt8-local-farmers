@@ -5,7 +5,7 @@ authRouter.post('/login', (req, res) => {
 
 })
 
-authRouter.get('/login', (req, res) => {
+authRouter.get('/logout', (req, res) => {
 
 })
 

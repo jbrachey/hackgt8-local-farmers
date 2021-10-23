@@ -1,8 +1,16 @@
 const Database = {
+    unique: 0,
     users: [],
     farms: [],
     posts: [],
-    chats: []
+    chats: [],
+
+    active_users: [],
+
+    next() {
+        this.unique++
+        return this.unique
+    }
 }
 
 /*
@@ -20,7 +28,7 @@ User {
 Farms {
     id,
     name,
-    location,
+    location (zipcode),
     user id (producer)
     posts: [Posts]
 }
