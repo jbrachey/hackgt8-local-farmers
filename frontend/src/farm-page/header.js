@@ -1,4 +1,5 @@
-import '../styles/header-style.css';
+import './header-style.css';
+
 
 const FarmPageHeader = ({name, phone, address, city, state, zip}) => {
     return (

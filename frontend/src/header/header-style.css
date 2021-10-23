@@ -1,0 +1,34 @@
+.ButtonIcons {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-direction: row;
+    min-height: 100vh;
+    padding-top: 2vh;
+    padding-inline: 2vh;
+}
+.homeButton {
+    height: 3rem;
+    width: 3rem;
+}
+.searchButton {
+    height: 3rem;
+    width: 3rem;
+}
+.buttonHome {
+    background-color: transparent;
+    border: transparent;
+}
+.buttonHome:hover {
+    border: black;
+    background-color: rgba(150, 156, 158, 0.459);
+}
+.buttonSearch {
+    background-color: transparent;
+    border: transparent;
+}
+.buttonSearch:hover {
+    border: black;
+    background-color: rgba(150, 156, 158, 0.459);
+}
+
