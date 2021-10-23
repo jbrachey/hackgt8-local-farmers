@@ -6,8 +6,8 @@ export const registerUser = (name, email, password) => {
 }
 
 export const isValidUserSubmission = (name, email, password) => {
-    if (email == null || email.trim() === '' || !email.includes('@') || email.indexOf('@') == 0 
-        || email.indexOf('@') == email.length - 1 || !email.includes('.') || name == null 
+    if (email == null || email.trim() === '' || !email.includes('@') || email.indexOf('@') === 0 
+        || email.indexOf('@') === email.length - 1 || !email.includes('.') || name == null 
         || name.trim() === '' || password == null || password.trim() === '' || password.length < 5) {
         return false;
     }

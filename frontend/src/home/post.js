@@ -1,6 +1,6 @@
-import './post-style';
+import './post-style.css';
 
-const Post = ({farmName, text}) => {
+const Post = ({farmID, farmName, text}) => {
     return (
         <div className='post'>
             <h2 className='farmName'>{farmName}</h2>
@@ -8,3 +8,5 @@ const Post = ({farmName, text}) => {
         </div>
     );
 }
+
+export default Post;
