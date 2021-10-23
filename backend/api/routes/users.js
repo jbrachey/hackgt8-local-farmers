@@ -2,6 +2,7 @@ const express = require('express')
 const userRouter = express.Router()
 
 const db = require('../../db')
+const middleware = require('../../utils/middleware')
 
 /*
 User {
@@ -29,6 +30,10 @@ userRouter.post('/create', (req, res) => {
     user.id = db.next()
     db.users.push(user)
     return res.status(200).end()
+})
+
+userRouter.get('/userInfo', middleware, (req, res) => {
+    return res.json(res.sessionUser).end()
 })
 
 userRouter.get('/get', (req, res) => {
