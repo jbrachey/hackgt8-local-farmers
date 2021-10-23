@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import './sign-up-style.css';
 
 export const registerUser = (name, email, password) => {
-    console.log('registered!')
+    // add user to backend db
 }
 
-const isValidSubmission = (name, email, password) => {
-    if (email == null || email.trim() === '' || !email.includes('@') || email.indexOf('@') == 0 
-        || email.indexOf('@') == email.length - 1 || !email.includes('.') || name == null 
+export const isValidUserSubmission = (name, email, password) => {
+    if (email == null || email.trim() === '' || !email.includes('@') || email.indexOf('@') === 0 
+        || email.indexOf('@') === email.length - 1 || !email.includes('.') || name == null 
         || name.trim() === '' || password == null || password.trim() === '' || password.length < 5) {
         return false;
     }
@@ -53,12 +53,10 @@ export const UserSignUp = () => {
                 </label>
             </div>
             <div className='buttonLine'>
-                <button className={isValidSubmission(name, email, password) ? 
+                <button className={isValidUserSubmission(name, email, password) ? 
                     'submitButton validSubmit' : 'submitButton invalidSubmit'} onClick={() => {
-                    if (isValidSubmission(name, email, password)) {
+                    if (isValidUserSubmission(name, email, password)) {
                         registerUser(name, email, password);
-                    } else {
-                        console.log('invalid');
                     }
                 }}>Submit</button>
             </div>
