@@ -6,7 +6,7 @@ const FarmPageHeader = ({name, phone, address, city, state, zip}) => {
         <div className='header'>
             <span className='title'>{name}</span>
             <br/>
-            <span>{phone} {address} {city}, {state} {zip}</span>
+            <span>{phone} {address} {city} {state} {zip}</span>
         </div>
     );
 }

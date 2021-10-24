@@ -1,0 +1,14 @@
+.searchResultButton {
+    width: 35vw;
+    outline: 3px;
+    outline-style: solid;
+}
+
+.searchResult {
+    padding-top: 2vh;
+}
+body {
+    background-color: rosybrown;
+    margin-trim: in-flow;
+
+}
