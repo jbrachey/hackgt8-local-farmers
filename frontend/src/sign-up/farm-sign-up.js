@@ -23,9 +23,8 @@ const registerFarmAndFarmer = (farmName, farmUserName, farmAddress, farmCity,
             phone: phone
         };
         axios.post(`http://localhost:8000/api/farms/create`, farm)
-        .then(res => {
-            console.log(res);
-            console.log(res.data);
+        .then(() => {
+            window.location.href = 'http://localhost:3000/';
         }).catch(err => {console.log(err)})
 }
 
