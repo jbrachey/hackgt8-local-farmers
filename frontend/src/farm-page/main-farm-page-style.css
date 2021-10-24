@@ -1,0 +1,123 @@
+.farmPage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.farmPageInfo {
+    display: flex;
+    flex-direction: column;
+    padding-top: 3vh;
+    margin: 1vh;
+}
+
+.nameFarmPage{
+    font-size: 200%;
+    font-weight: 900;
+}
+
+.phonelocationFarmPage {
+    display: flex;
+    flex-direction: column;
+    margin: 3vh;
+    padding: 2vh;
+    font-weight: 900;
+    color: rgb(71, 70, 70);
+}
+
+.sustainFPContain {
+    font-size: 130%;
+    font-weight: bold;
+    margin-top: 5vh;
+}
+
+.sustainFP {
+    font-size: 90%;
+    font-weight: normal;
+}
+
+.hoursFPContain {
+    font-size: 130%;
+    font-weight: bold;
+    margin-top: 5vh;
+
+}
+
+.hoursFP {
+    font-size: 90%;
+    font-weight: normal;
+}
+
+.infoFPContain {
+    font-size: 130%;
+    font-weight: bold;
+}
+
+.infoFP {
+    font-size: 90%;
+    font-weight: normal;
+
+}
+
+.subButton {
+    border: none;
+    background-color: blue;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 8px;
+    margin-top: 5vh;
+}
+
+.subButton:hover {
+    transform: translate(0, -6px);
+    box-shadow: 10px -10px 25px 0 lightskyblue, -10px 10px 25px 0 lightskyblue;
+}
+
+.alreadyFollowed {
+    border: none;
+    background-color: green;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 8px;
+    margin-top: 5vh;
+}
+
+#tick-mark {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+}
+
+#tick-mark::before {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 50%;
+    width: 3px;
+    background-color: white;
+    content: "";
+    transform: translateX(10px) rotate(-45deg);
+    transform-origin: left bottom;
+}
+
+#tick-mark::after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    content: "";
+    transform: translateX(10px) rotate(-45deg);
+    transform-origin: left bottom;
+}
