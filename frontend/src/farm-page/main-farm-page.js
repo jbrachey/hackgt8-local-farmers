@@ -1,7 +1,5 @@
-import FarmPageHeader from "./header";
 import axios from "axios";
 import MainHeader from "../header/main-header";
-import FollowButton from "./follow-button";
 import './main-farm-page-style.css';
 
 export const getFarm = async (farmName) => {
