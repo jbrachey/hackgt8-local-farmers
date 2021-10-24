@@ -22,3 +22,8 @@
 .postText {
     font-size: small;
 }
+
+.postButton {
+    background-color: tan;
+    border: none;
+}

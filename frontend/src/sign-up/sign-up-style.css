@@ -1,7 +1,6 @@
 .submitButton {
     border: none;
     background-color: #04AA6D;
-    border: none;
     color: white;
     padding: 20px;
     text-align: center;
@@ -27,6 +26,19 @@
 
 .lines {
     padding-top: 2vh;
+}
+
+.textAreaLines {
+    padding-top: 2vh;
+    justify-content: center;
+    height: fit-content;
+    display: inline-block;
+}
+
+.textAreaBox {
+    margin-left: 1vw;
+    height: 10vh;
+    width: 30vw;
 }
 
 .buttonLine {

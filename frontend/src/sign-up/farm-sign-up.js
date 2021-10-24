@@ -1,16 +1,45 @@
 import { registerUser, isValidUserSubmission } from "./user-sign-up"
+import './sign-up-style.css';
 import React, { useState } from 'react';
+import axios from 'axios';
 
-const registerFarmAndFarmer = (farmName, farmAddress, farmCity,
-    farmState, farmZip, farmerName, email, password) => {
-        registerUser(farmerName, email, password);
-
+const registerFarmAndFarmer = (farmName, farmUserName, farmAddress, farmCity,
+    farmState, farmZip, farmInfo, farmSustainability, farmHours, phone, farmerName, email, password) => {
+        console.log('registering!');
+        registerUser(farmerName, email, password, 'producer');
+        const location = {
+            address: farmAddress,
+            city: farmCity,
+            state: farmState,
+            zip: farmZip
+        };
+        const farm = {
+            name: farmName,
+            location: location,
+            info: farmInfo,
+            sustainability: farmSustainability,
+            hours: farmHours,
+            farmUserName: farmUserName,
+            phone: phone
+        };
+        axios.post(`http://localhost:8000/api/farms/create`, farm)
+        .then(res => {
+            console.log(res);
+            console.log(res.data);
+        }).catch(err => {console.log(err)})
 }
 
-const isValidSubmission = (farmName, farmAddress, farmCity, farmState, farmZip, name, email, password) => {
+const isValidFarmUserName = (farmUserName) => {
+    // should have api for this prob
+    return true;
+}
+
+const isValidSubmission = (farmName, farmUserName, farmAddress, farmCity,
+    farmState, farmZip, farmerName, email, password) => {
     if (farmName == null || farmName.trim() === '' || farmAddress == null || farmAddress.trim() === ''
         || farmCity == null || farmCity.trim() === '' || farmState == null || farmState.trim() === ''
-        || farmZip == null || farmZip.trim().length !== 5 || !isValidUserSubmission(name, email, password)) {
+        || farmZip == null || farmZip.trim().length !== 5 || !isValidUserSubmission(farmerName, email, password)
+        || !isValidFarmUserName(farmUserName)) {
             return false;
         }
     return true;
@@ -18,10 +47,15 @@ const isValidSubmission = (farmName, farmAddress, farmCity, farmState, farmZip, 
 
 export const FarmSignUp = () => {
     const [farmName, setFarmName] = useState('');
+    const [farmUserName, setFarmUserName] = useState('');
     const [farmAddress, setFarmAddress] = useState('');
     const [farmCity, setFarmCity] = useState('');
     const [farmState, setFarmState] = useState('');
     const [farmZip, setFarmZip] = useState('');
+    const [farmInfo, setFarmInfo] = useState('');
+    const [farmSustainability, setFarmSustainability] = useState('');
+    const [farmHours, setFarmHours] = useState('');
+    const [phone, setPhone] = useState('');
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -29,31 +63,39 @@ export const FarmSignUp = () => {
     const handleSetFarmName = (event) => {
         setFarmName(event.target.value);
     }
-
+    const handleSetFarmUserName = (event) => {
+        setFarmUserName(event.target.value);
+    }
     const handleSetFarmAddress = (event) => {
         setFarmAddress(event.target.value);
     }
-
     const handleSetFarmCity = (event) => {
         setFarmCity(event.target.value);
     }
-
     const handleSetFarmState = (event) => {
         setFarmState(event.target.value);
     }
-
     const handleSetFarmZip = (event) => {
         setFarmZip(event.target.value);
     }
-
+    const handleSetFarmInfo = (event) => {
+        setFarmInfo(event.target.value);
+    }
+    const handleSetFarmSustainability = (event) => {
+        setFarmSustainability(event.target.value);
+    }
+    const handleSetFarmHours = (event) => {
+        setFarmHours(event.target.value);
+    }
+    const handleSetPhone = (event) => {
+        setPhone(event.target.value);
+    }
     const handleSetName = (event) => {
         setName(event.target.value);
     }
-
     const handleSetEmail = (event) => {
         setEmail(event.target.value);
     }
-
     const handleSetPassword = (event) => {
         setPassword(event.target.value);
     }
@@ -65,6 +107,12 @@ export const FarmSignUp = () => {
                 <label>
                     Farm Name:
                     <input className='inputBox' type='text' value={farmName} onChange={handleSetFarmName}/>
+                </label>
+            </div>
+            <div className='lines'>
+                <label>
+                    Farm UserName:
+                    <input className='inputBox' type='text' value={farmUserName} onChange={handleSetFarmUserName}/>
                 </label>
             </div>
             <div className='lines'>
@@ -91,6 +139,32 @@ export const FarmSignUp = () => {
                     <input className='inputBox' type='text' value={farmZip} onChange={handleSetFarmZip}/>
                 </label>
             </div>
+            <div className='textAreaLines'>
+                <label>
+                    Farm Info:
+                    <textarea className='textAreaBox' type='text' value={farmInfo} onChange={handleSetFarmInfo}/>
+                </label>
+            </div>
+            <br/>
+            <div className='textAreaLines'>
+                <label>
+                    Farm Sustainability:
+                    <textarea className='textAreaBox' type='text' value={farmSustainability} onChange={handleSetFarmSustainability}/>
+                </label>
+            </div>
+            <br/>
+            <div className='textAreaLines'>
+                <label>
+                    Farm Hours:
+                    <textarea className='textAreaBox' type='text' value={farmHours} onChange={handleSetFarmHours}/>
+                </label>
+            </div>
+            <div className='lines'>
+                <label>
+                    Farm Phone:
+                    <input className='inputBox' type='text' value={phone} onChange={handleSetPhone}/>
+                </label>
+            </div>
             <div className='lines'>
                 <label>
                     Name:
@@ -110,12 +184,13 @@ export const FarmSignUp = () => {
                 </label>
             </div>
             <div className='buttonLine'>
-                <button className={isValidSubmission(farmName, farmAddress, farmCity, 
+                <button className={isValidSubmission(farmName, farmUserName, farmAddress, farmCity, 
                 farmState, farmZip, name, email, password) ? 
                     'submitButton validSubmit' : 'submitButton invalidSubmit'} onClick={() => {
-                    if (isValidSubmission(farmName, farmAddress, farmCity, 
+                    if (isValidSubmission(farmName, farmUserName, farmAddress, farmCity, 
                         farmState, farmZip, name, email, password)) {
-                        registerFarmAndFarmer(farmName, farmAddress, farmCity, farmState, farmZip, name, email, password);
+                        registerFarmAndFarmer(farmName, farmUserName, farmAddress, farmCity, 
+                            farmState, farmZip, name, email, password);
                     }
                 }}>Submit</button>
             </div>

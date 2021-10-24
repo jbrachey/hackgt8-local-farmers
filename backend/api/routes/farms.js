@@ -5,8 +5,12 @@ const db = require('../../db')
 /*Farms {
     id,
     name,
-    location (zipcode),
-    user id (producer)
+    location (address, city, state, zipcode),
+    info,
+    sustainability,
+    hours,
+    farm username,
+    phone,
     posts: [Posts]
 }*/
 
@@ -18,13 +22,14 @@ farmRouter.post('/create', (req, res) => {
         })
     }
     // make username unique
-    if (db.farms.find(f => f.name === farm.name && f.location === farm.location)) {
+    if (db.farms.find(f => f.name === farm.name && f.location.address === farm.location.address
+        && f.location.zip === farm.location.zip)) {
         return res.status(401).json({
             error: 'Farm with same name + location already exists'
         })
     }
     farm.id = db.next()
-    db.farm.push(user)
+    db.farm.push(farm)
     return res.status(200).end()
 })
 

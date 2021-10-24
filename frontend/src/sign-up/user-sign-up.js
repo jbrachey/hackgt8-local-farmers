@@ -1,8 +1,21 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import './sign-up-style.css';
 
-export const registerUser = (name, email, password) => {
+export const registerUser = (name, email, password, type) => {
     // add user to backend db
+    const user = {
+        name: name, 
+        email: email,
+        password: password,
+        type: type
+    };
+
+    axios.post(`http://localhost:8000/api/users/create`, user)
+        .then(res => {
+            console.log(res);
+            console.log(res.data);
+        })
 }
 
 export const isValidUserSubmission = (name, email, password) => {
@@ -55,9 +68,9 @@ export const UserSignUp = () => {
             <div className='buttonLine'>
                 <button className={isValidUserSubmission(name, email, password) ? 
                     'submitButton validSubmit' : 'submitButton invalidSubmit'} onClick={() => {
-                    if (isValidUserSubmission(name, email, password)) {
-                        registerUser(name, email, password);
-                    }
+                    //if (isValidUserSubmission(name, email, password)) {
+                        registerUser(name, email, password, 'consumer');
+                    //}
                 }}>Submit</button>
             </div>
         </div>
