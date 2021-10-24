@@ -6,10 +6,14 @@ const MainHeader = () => {
     return (
         <div>
             <div className = "ButtonIcons">
-                <button className = "buttonHome">
+                <button className = "buttonHome" onClick={() => {
+                    window.location.href = 'http://localhost:3000/';
+                }}>
                     <img src = {home} alt = 'homeButton' className = "homeButton"/>
                 </button>
-                <button className = "buttonSearch">
+                <button className = "buttonSearch" onClick={() => {
+                    window.location.href = 'http://localhost:3000/search/';
+                }}>
                     <img src = {search} alt = 'searchButton' className = "searchButton"/>
                 </button>
             </div>

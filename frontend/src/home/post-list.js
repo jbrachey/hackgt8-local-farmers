@@ -5,7 +5,7 @@ const PostList = ({posts}) => {
     return (
         <div className='postList'>
             {posts.map((post) => {
-                return <li key={post[0]}><Post farmUserName={post[0]}farmName={post[1]} text={post[2]}/></li>
+                return <li className='listItems' key={post[0]}><Post farmUserName={post[0]}farmName={post[1]} text={post[2]}/></li>
             })}
         </div>
     )
