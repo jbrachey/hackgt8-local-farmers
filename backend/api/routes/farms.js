@@ -44,7 +44,7 @@ farmRouter.get('/get/:location', (req, res) => {
 
 farmRouter.get('/get/:name', (req, res) => {
     const name = req.params.name
-    return res.json(db.farms.filter(f => f.name === name)).end()
+    return res.json(db.farms.filter(f => f.name.toLowerCase().includes(name))).end()
 })
 
 /*
