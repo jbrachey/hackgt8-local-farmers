@@ -16,6 +16,7 @@ const HomePage = () => {
     return (
         <div className='home'>
             <MainHeader/>
+            <h3>See posts from local farmers!</h3>
             <PostList posts={posts}/>
         </div>
     )

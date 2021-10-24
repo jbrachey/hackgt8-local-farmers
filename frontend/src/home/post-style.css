@@ -26,4 +26,9 @@
 .postButton {
     background-color: tan;
     border: none;
+    width: 50vw;
+}
+
+.postButton:hover {
+    cursor: pointer;
 }

@@ -4,7 +4,7 @@ const ErrorPage = () => {
     return (
         <div>
             <MainHeader/>
-            <span>Unfortunately, the farm you were trying to reach was not found.</span>
+            <h3>Unfortunately, the farm you were trying to reach was not found.</h3>
         </div>
     )
 }
