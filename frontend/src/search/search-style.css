@@ -2,11 +2,18 @@
     width: 35vw;
     outline: 3px;
     outline-style: solid;
+    background-color: lightgreen;
+}
+
+.searchResultButton:hover {
+    cursor: pointer;
 }
 
 .searchResult {
     padding-top: 2vh;
 }
-body {
-    background-color: rosybrown;
+
+.farmResult {
+    list-style-type: none;
+    margin-top: 5vh;
 }
