@@ -8,15 +8,19 @@ const SignUp = () => {
 
     if (isInitialPage) {
         return (
-            <div>
-                <span>I am a...</span>
-                <button onClick={() => {
-                    setIsInitialPage(false);
-                    setIsFarm(true);
-                }}>Farmer</button>
-                <button onClick={() => {
-                    setIsInitialPage(false);
-                }}>Farm enthusiast</button>
+            <div className = "signUpText">
+                <span className = "signUpText2">I am a...</span>
+                <div className = "container">
+                    <div className = "buttons">
+                        <button className = "signUpButton farmerButton" onClick={() => {
+                        setIsInitialPage(false);
+                        setIsFarm(true);
+                    }}>Farmer</button>
+                    <button className = "signUpButton enthusiastButton" onClick={() => {
+                        setIsInitialPage(false);
+                    }}>Farm enthusiast</button>
+                    </div>
+                </div>
             </div>
         )
     } else if (isFarm) {

@@ -4,10 +4,19 @@
     box-shadow: 0 0 3px 3px;
     background-color: tan;
     width: 50vw;
+    height: 15vh;
 }
 
 .farmName {
     font-size: medium;
+}
+
+.line {
+    width: 383px;
+    height: -10px;
+    border-bottom: 1px solid black;
+    position: relative;
+    
 }
 
 .postText {

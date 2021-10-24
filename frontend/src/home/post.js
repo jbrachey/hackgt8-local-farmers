@@ -4,6 +4,7 @@ const Post = ({farmID, farmName, text}) => {
     return (
         <div className='post'>
             <h2 className='farmName'>{farmName}</h2>
+            <div className = "line"></div>
             <span className='postText'>{text}</span>
         </div>
     );
