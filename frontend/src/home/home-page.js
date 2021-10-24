@@ -2,16 +2,16 @@ import MainHeader from "../header/main-header";
 import PostList from "./post-list";
 import './home-page-style.css';
 
-const getPosts = async () => {
+/*const getPosts = async () => {
     
-}
+}*/
 
 const HomePage = () => {
-    // Place holder, later get posts from api
+    // Place holder, later get posts from api based on farms user is following
     // const posts = await getPosts();
-    const posts = [['loffarm', 'Local Organic Farm', 'Got some new tomatoes for yall'],
-                ['cool_farm', 'Other farm nearby', 'Come here for all your apple needs'],
-                ['smol', 'Small farm', 'Veggies veggies veggies!!!!']];
+    const posts = [['180deg', '180 Degree Farm', "This season's apples look better than ever!!"],
+                ['mobley', 'Mobley Farm', "Looking for volunteers, call our number if you are interested!"],
+                ['statefarm', 'State Farm', 'Like a good neighbor, State Farm is there!']];
 
     return (
         <div className='home'>

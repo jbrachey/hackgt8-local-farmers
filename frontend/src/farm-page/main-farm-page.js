@@ -14,6 +14,8 @@ export const getFarm = async (farmName) => {
 
 const FarmPage = ({url}) => {
     const farmName = url.location.pathname.substring(6);
+    // would use api to keep track of follows but ran out of time
+    const [isUserSubscribed, setIsUserSubstribed] = useState(false);
     const [farm, setFarm] = useState(null);
     useEffect(async () => {
         const farm = await getFarm(farmName);
@@ -48,7 +50,10 @@ const FarmPage = ({url}) => {
                     {farm.hours}
                 </div>
                 <div>
-                    {true ? (<button className = "subButton">Follow</button>) : (<button className = "alreadyFollowed">Followed<div id = "tick-mark"></div></button>)}
+                    {isUserSubscribed ? (<button className = "alreadyFollowed">Followed<div id = "tick-mark"></div></button>) 
+                    : (<button className = "subButton" onClick={() => {
+                        setIsUserSubstribed(true);
+                    }}>Follow</button>)}
                 </div>
             </div>
         </div>
