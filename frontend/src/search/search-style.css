@@ -21,3 +21,27 @@
 body {
     background-color: rosybrown;
 }
+
+.farmNameInput {
+    border: 2px solid limegreen;
+}
+
+
+.zipInput {
+    border: 2px solid limegreen;
+
+}
+
+.orSearchBar {
+    padding: 2vh;
+    font-weight: bolder;
+}
+
+.noResult {
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15vh;
+}
+
