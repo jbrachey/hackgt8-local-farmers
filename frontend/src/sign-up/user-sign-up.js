@@ -13,8 +13,7 @@ export const registerUser = (name, email, password, type) => {
 
     axios.post(`http://localhost:8000/api/users/create`, user)
         .then(res => {
-            console.log(res);
-            console.log(res.data);
+            window.location.href = 'http://localhost:3000/';
         })
 }
 

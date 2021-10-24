@@ -189,7 +189,7 @@ export const FarmSignUp = () => {
                     if (isValidSubmission(farmName, farmUserName, farmAddress, farmCity, 
                         farmState, farmZip, name, email, password)) {
                         registerFarmAndFarmer(farmName, farmUserName, farmAddress, farmCity, 
-                            farmState, farmZip, name, email, password);
+                            farmState, farmZip, farmInfo, farmSustainability, farmHours, phone, name, email, password);
                     }
                 }}>Submit</button>
             </div>
