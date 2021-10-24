@@ -4,10 +4,8 @@ const Post = ({farmUserName, farmName, text}) => {
     return (
         <div className='post'>
             <button className='postButton' onClick={() => {
-                console.log(farmUserName);
-            }
-
-            }>
+                window.location.href = `http://localhost:3000/farm/${farmUserName}`;
+            }}>
                 <h2 className='farmName'>{farmName}</h2>
             </button>
             <div className = "line"></div>

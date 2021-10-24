@@ -7,7 +7,7 @@ export const getFarm = async (farmName) => {
         .then(res => {
             return res;
         }).catch(() => {
-            window.location.href = 'http://localhost:3000/';
+            window.location.href = 'http://localhost:3000/error';
         });
 }
 
