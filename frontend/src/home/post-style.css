@@ -2,7 +2,7 @@
     outline: 2px;
     outline-style: solid;
     box-shadow: 0 0 3px 3px;
-    background-color: tan;
+    background-color: lightgreen;
     width: 50vw;
     height: 15vh;
 }
@@ -24,7 +24,7 @@
 }
 
 .postButton {
-    background-color: tan;
+    background-color: lightgreen;
     border: none;
     width: 50vw;
 }
