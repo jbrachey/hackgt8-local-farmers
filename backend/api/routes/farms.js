@@ -22,14 +22,13 @@ farmRouter.post('/create', (req, res) => {
         })
     }
     // make username unique
-    if (db.farms.find(f => f.name === farm.name && f.location.address === farm.location.address
-        && f.location.zip === farm.location.zip)) {
+    if (db.farms.find(f => f.farmUserName === farm.farmUserName)) {
         return res.status(401).json({
             error: 'Farm with same name + location already exists'
         })
     }
     farm.id = db.next()
-    db.farm.push(farm)
+    db.farms.push(farm)
     return res.status(200).end()
 })
 
