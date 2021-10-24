@@ -10,3 +10,8 @@
     display: inline-block;
     width: 50vw;
 }
+
+.listItems {
+    list-style-type: none;
+    margin-top: 5vh;
+}
