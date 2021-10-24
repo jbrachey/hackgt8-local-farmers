@@ -37,13 +37,13 @@ const Search = () => {
         <div>
             <MainHeader />
             <div className = "searchBar">
-                <input type = "text" value={nameInput} placeholder = "Enter Farm Name..." 
+                <input type = "text" className = "farmNameInput" value={nameInput} placeholder = "Enter Farm Name..." 
                     onChange={handleChangeNameInput}></input>
-                <span>or...</span>
-                <input type = "text" value={zipInput} placeholder = "Enter Zip Code..." 
+                <span className = "orSearchBar">or...</span>
+                <input type = "text" className = "zipInput" value={zipInput} placeholder = "Enter Zip Code..." 
                     onChange={handleChangeZipInput}></input>
                 {((searchResults == undefined || searchResults.length === 0) ? (<div>
-                    <span>Sorry, no results found!</span>
+                    <span className = "noResult">Sorry, no results found!</span>
                 </div>) : (<div>
                     {searchResults.map((farm) => {
                         return <li className='farmResult' onClick={() => {
