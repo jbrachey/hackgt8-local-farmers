@@ -3,7 +3,6 @@
     justify-content: space-between;
     align-items: baseline;
     flex-direction: row;
-    min-height: 100vh;
     padding-top: 2vh;
     padding-inline: 2vh;
 }

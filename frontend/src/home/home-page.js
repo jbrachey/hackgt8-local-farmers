@@ -1,8 +1,9 @@
-import Post from "./post";
+import MainHeader from "../header/main-header";
+import PostList from "./post-list";
 import './home-page-style.css';
 
 const getPosts = async () => {
-
+    
 }
 
 const HomePage = () => {
@@ -14,9 +15,8 @@ const HomePage = () => {
 
     return (
         <div className='home'>
-            {posts.map((post) => {
-            return <li key={post[0]}><Post farmUserName={post[0]}farmName={post[1]} text={post[2]}/></li>
-        })}
+            <MainHeader/>
+            <PostList posts={posts}/>
         </div>
     )
 }

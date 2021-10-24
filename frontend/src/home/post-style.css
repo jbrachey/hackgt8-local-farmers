@@ -12,7 +12,7 @@
 }
 
 .line {
-    width: 383px;
+    width: 50vw;
     height: -10px;
     border-bottom: 1px solid black;
     position: relative;

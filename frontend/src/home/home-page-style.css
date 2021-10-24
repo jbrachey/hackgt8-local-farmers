@@ -1,4 +1,12 @@
 .home {
     justify-content: center;
     display: inline-block;
+    width: 100vw;
+    height: 100vh;
+}
+
+.postList {
+    justify-content: center;
+    display: inline-block;
+    width: 50vw;
 }
