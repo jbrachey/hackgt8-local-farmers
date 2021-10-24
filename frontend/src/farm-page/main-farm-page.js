@@ -1,9 +1,10 @@
 import axios from "axios";
 import MainHeader from "../header/main-header";
+import { useState, useEffect } from 'react';
 import './main-farm-page-style.css';
 
 export const getFarm = async (farmName) => {
-    return axios.get(`http://localhost:8000/api/farms/get/${farmName}`)
+    return axios.get(`http://localhost:8000/api/farms/getInfo/${farmName}`)
         .then(res => {
             return res;
         }).catch(() => {
@@ -11,10 +12,18 @@ export const getFarm = async (farmName) => {
         });
 }
 
-const FarmPage = ({farm}) => {
-    //const farmName = url.location.pathname.substring(1);
-    //const farm = getFarm(farmName);
-    console.log('farm', farm);
+const FarmPage = ({url}) => {
+    const farmName = url.location.pathname.substring(6);
+    const [farm, setFarm] = useState(null);
+    useEffect(async () => {
+        const farm = await getFarm(farmName);
+        setFarm(farm.data);
+    }, []);
+    if (farm == null) {
+        return (
+            <div></div>
+        )
+    }
     return (
         <div>
             <MainHeader />

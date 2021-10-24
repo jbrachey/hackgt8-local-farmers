@@ -110,7 +110,7 @@ export const FarmSignUp = () => {
             </div>
             <div className='lines'>
                 <label>
-                    Farm UserName:
+                    Farm Username:
                     <input className='inputBox' type='text' value={farmUserName} onChange={handleSetFarmUserName}/>
                 </label>
             </div>

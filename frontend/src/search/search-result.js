@@ -2,7 +2,7 @@ import './search-style.css';
 const SearchResult = ({farmName, farmUserName, location}) => {
     return (
         <div className = "searchResult">
-            <button className = "searchResultButton" onclick={() => {
+            <button className = "searchResultButton" onClick={() => {
                 window.location.href = `http://localhost:3000/farm/${farmUserName}`;
             }}>
                 <h1 className='farmName'>{farmName}</h1>
